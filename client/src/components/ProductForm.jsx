@@ -18,9 +18,9 @@ const ProductForm = () => {
     const handleSubmit = (e) =>{
         e.preventDefault();
         axios.post("http://localhost:8000/api/products/new",product)
-            .then(setIsCreated(true))
-            .catch(err => console.log("error",err))
-        
+            .then(response => { 
+                setIsCreated(true)
+                console.log(response)})
     }
 
     return (
